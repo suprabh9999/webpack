@@ -1,7 +1,4 @@
 import loadHome from "./home";
-import loadMutualFunds from "./mutualFunds";
-import loadRealEstate from "./realEstate";
-import loadStocks from "./stocks";
 
 const navList = document.getElementById("navList");
 const routes = [
@@ -45,13 +42,13 @@ export function handleNavigation(routeId) {
   updateActiveLink(routeId);
   switch (routeId) {
     case "stocks":
-      loadStocks();
+      import("./stocks").then((module) => module.default);
       break;
     case "mutualFunds":
-      loadMutualFunds();
+      import("./mutualFunds").then((module) => module.default);
       break;
     case "realEstate":
-      loadRealEstate();
+      import("./realEstate").then((module) => module.default);
       break;
     case "home":
     default:
