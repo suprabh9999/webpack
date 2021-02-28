@@ -42,13 +42,13 @@ export function handleNavigation(routeId) {
   updateActiveLink(routeId);
   switch (routeId) {
     case "stocks":
-      import("./stocks").then((module) => module.default);
+      import("./stocks").then((module) => module.default());
       break;
     case "mutualFunds":
-      import("./mutualFunds").then((module) => module.default);
+      import("./mutualFunds").then((module) => module.default());
       break;
     case "realEstate":
-      import("./realEstate").then((module) => module.default);
+      import("./realEstate").then((module) => module.default());
       break;
     case "home":
     default:
